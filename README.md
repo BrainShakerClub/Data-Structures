@@ -40,7 +40,7 @@
     <dt>└───*Sighs* Tony this is not a time for a <a href="https://en.wikipedia.org/wiki/Mise_en_abyme">mise en abyme</a>...</dd>
 </dl>
 
-## **The Abstarct Data Types:**
+## **The Data Structures:**
 - [ ] **Arrays**
 - [ ] **Linked Lists**
 - [ ] **Stacks**
