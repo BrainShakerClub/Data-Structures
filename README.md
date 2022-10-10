@@ -15,13 +15,20 @@
 
 <dl>
   <dt><strong>assets/</strong></dt>
-    <dt>└── The files that are to be used as a path</dd>
+    <dt>└─── The files that are to be used as a path</dd>
   <dt><strong>headers/</strong></dt>
-    <dt>└──The <strong>prototypes</strong> of the structs</dd>
+    <dt>└───The <strong>prototypes</strong> of the structs</dd>
   <dt><strong>library/</strong></dt>
-    <dt>└──The final <strong>product</strong> with the makefile and the <b>.a</b> file</dd>    
+    <dt>└───The final <strong>product</strong> with the makefile and the <b>.a</b> file</dd>    
   <dt><strong>source/</strong></dt>
-    <dt>└──The <strong>source code</strong> ( .c files)</dd>  
-
+    <dt>└───The <strong>source code</strong> ( .c files)</dd>
+  <dt><strong>README.md</strong></dt>
+    <dt>└───*Sighs* Tony this is not a time for a <a href="https://en.wikipedia.org/wiki/Mise_en_abyme">mise en abyme</a>...</dd>
 </dl>
 
+## **The Abstarct Data Types:**
+* **Arrays**
+* **Linked Lists**
+* **Stacks**
+* **Arrays**
+* 
