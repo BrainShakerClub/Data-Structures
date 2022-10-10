@@ -1,4 +1,4 @@
-# **Coding style** notes for the development
+# **Coding style** notes for development
 
 As [@giorgossofronas](https://github.com/giorgossofronas) wrote in his issue this is our coding style:
 
