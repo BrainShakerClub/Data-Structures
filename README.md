@@ -18,6 +18,13 @@
     <img src="assets/BrainShaker.jpg" alt="BrainShaker" width="302" />
 </p>
 
+## **Authors**
+> [**Antonis Kalantzis**](https://github.com/tonykalantzis)
+
+> [**Giorgos Sofronas**](https://github.com/giorgossofronas)
+
+> [**Mixalis Kostagiannis**](https://github.com/MikeRaphK)
+
 ## **Directories** 
 
 <dl>
