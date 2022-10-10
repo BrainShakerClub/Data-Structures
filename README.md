@@ -1,4 +1,7 @@
-# Brain Shaker's Abstract Data Types C library
+<p align="center">
+<h1> Brain Shaker's Abstract Data Types C library </h1>
+</p>
+
 <p align="center">
     <a href="https://github.com/BrainShakerClub/ADT-library/blob/main/assets/LICENSE">Copyright (c)
     </a>    
