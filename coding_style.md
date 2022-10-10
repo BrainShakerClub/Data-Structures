@@ -1,6 +1,6 @@
 # **Coding style** notes for the development
 
-As [@giorgossofronas](https://github.com/giorgossofronas) wrote in his issue that is our coding style:
+As [@giorgossofronas](https://github.com/giorgossofronas) wrote in his issue this is our coding style:
 
 ## Coding style in our C projects
 
