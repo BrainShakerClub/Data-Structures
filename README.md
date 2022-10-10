@@ -6,6 +6,7 @@
         <a href="https://github.com/BrainShakerClub">
             <b>Brain Shaker Computer Club</b>
             <br>
+            <br>
         </a>
     <img src="assets/BrainShaker.jpg" alt="BrainShaker" width="302" />
 </p>
