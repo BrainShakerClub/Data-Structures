@@ -27,8 +27,14 @@
 </dl>
 
 ## **The Abstarct Data Types:**
-* **Arrays**
-* **Linked Lists**
-* **Stacks**
-* **Arrays**
-* 
+- [ ] **Arrays**
+- [ ] **Linked Lists**
+- [ ] **Stacks**
+- [ ] **Queues** 
+- [ ] **Hash Tables** 
+- [ ] **Trees** 
+- [ ] **Heaps**
+ 
+- [ ] **Graphs** 
+  
+- [x] **Ambitions**
