@@ -1,6 +1,10 @@
-<p align="center">
-<h1> Brain Shaker's Abstract Data Types C library </h1>
-</p>
+<h1>
+    <p align="center">
+    <strong>
+    Brain Shaker's Abstract Data Types C library
+    </strong>
+    </p>
+</h1>
 
 <p align="center">
     <a href="https://github.com/BrainShakerClub/ADT-library/blob/main/assets/LICENSE">Copyright (c)
@@ -37,7 +41,6 @@
 - [ ] **Hash Tables** 
 - [ ] **Trees** 
 - [ ] **Heaps**
- 
-- [ ] **Graphs** 
   
+- [ ] **Graphs** 
 - [x] **Ambitions**
