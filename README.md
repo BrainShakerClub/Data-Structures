@@ -11,13 +11,4 @@
     <img src="assets/BrainShaker.jpg" alt="BrainShaker" width="302" />
 </p>
 
-## **Directories**
 
-ADT-library/
-├─ assets/
-│  ├─ LICENCE
-├─ headers/
-├─ library/
-│  ├─ makefile
-├─ source/
-├─ README.md
