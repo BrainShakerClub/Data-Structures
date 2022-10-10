@@ -1,7 +1,7 @@
 <h1>
     <p align="center">
     <strong>
-    Brain Shaker's Abstract Data Types C library
+    Brain Shaker's Data Structures C library
     </strong>
     </p>
 </h1>
