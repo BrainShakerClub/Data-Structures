@@ -25,6 +25,13 @@
 
 > [**Mixalis Kostagiannis**](https://github.com/MikeRaphK)
 
+## **Purpose**
+The **purpose** of this repository is to: 
+1. Provide a **base** and a **starting point** code-wise and theoretically for anyone **learning data structures**  in **C** language, with simplistic **easy to understand** code and plethora of documentation.
+
+2. **Convert** these simple **Data Types**, to **Abrastact Data Types** (types in generic form). Addressing a more **advanced developer**, providing a **ready-to-use library** campatible with C and C++ with **complex structs** (ex. RedBackTrees e.t.c), developted using the **void*** pointer.
+
+
 ## **Directories** 
 
 <dl>
