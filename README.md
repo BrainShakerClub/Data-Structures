@@ -50,7 +50,6 @@ The **purpose** of this repository is to:
 ## **The Data Structures:**
 - [ ] **Arrays**
 
-- [ ] **Linked Lists**
 - [ ] **Stacks**
 - [ ] **Queues** 
 - [ ] **Hash Tables** 
