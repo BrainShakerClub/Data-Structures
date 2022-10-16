@@ -1,11 +1,11 @@
-typedef struct Node {          
+typedef struct Queue_Node {
     int data;
-    struct Node* next;    
-}Node;
+    struct Queue_Node* next;
+}Queue_Node;
 
 typedef struct Queue {
     int count;
-    Node* first;
+    Queue_Node* first;
 }Queue;
 
 typedef int Bool;
@@ -13,13 +13,15 @@ typedef int Bool;
 #define false 0
 
 typedef Queue* Queue_Link;
-typedef Node* Node_Link; 
+typedef Queue_Node* Queue_Node_Link; 
 
 Queue_Link queue_initialize(Queue_Link pointer);
 void queue_enqueue(Queue_Link pointer, int data);
-void queue_print(Queue_Link pointer);
-void queue_reverse(Queue_Link pointer);
 int queue_dequeue(Queue_Link pointer);
 void queue_destroy(Queue_Link pointer);
-int queue_delete(Queue_Link pointer);
+void queue_print(Queue_Link pointer);
+void queue_reverse(Queue_Link pointer);
+Queue_Link queue_copy(Queue_Link pointer);
+int* queue_to_array(Queue_Link pointer);
+void queue_sort(Queue_Link pointer);
 

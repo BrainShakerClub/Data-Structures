@@ -13,8 +13,8 @@ Queue_Link queue_initialize(Queue_Link pointer)
 
 void queue_enqueue(Queue_Link pointer, int data) //create 1 at start
 {
-    Node_Link temp;
-    temp = malloc(sizeof(Node)); //Create a node as a "package"
+    Queue_Node_Link temp;
+    temp = malloc(sizeof(Queue_Node)); //Create a node as a "package"
     temp->data = data;
     temp->next = NULL;
 
@@ -48,7 +48,7 @@ int queue_dequeue(Queue_Link pointer) //delete 1 at end
     }
     else
     {
-        Node_Link cursor = pointer->first;
+        Queue_Node_Link cursor = pointer->first;
         for(int i = 2 ; i < pointer->count ; i++)
             cursor = cursor->next;
 
@@ -57,54 +57,6 @@ int queue_dequeue(Queue_Link pointer) //delete 1 at end
         cursor->next = NULL;
         pointer->count--;
         return temp;
-    }
-}
-
-void queue_add(Queue_Link pointer, int data)//create 1 at end
-{
-    Node_Link temp;
-    temp = malloc(sizeof(Node)); //Create a node as a "package"
-    temp->data = data;
-    temp->next = NULL;
-
-    if(pointer->count == 0)
-    {
-        pointer->first = temp;
-        pointer->count++;
-    }
-    else
-    {
-        Node_Link cursor = pointer->first;
-        while(cursor->next != NULL)
-            cursor = cursor->next;
-        cursor->next = temp;
-        pointer->count++;
-    }
-}
-
-int queue_delete(Queue_Link pointer)//delete 1 at start
-{
-    if(pointer == NULL) 
-    {
-        printf("ERROR. The queue is empty, cant delete a node\n");
-        return -1;
-    }
-    else if(pointer->count == 1)
-    {
-        int temp = pointer->first->data;
-        free(pointer->first);
-        pointer->first = NULL;
-        pointer->count--; 
-        return temp;
-    }
-    else
-    {
-        Node_Link temp = pointer->first->next;
-        int data = pointer->first->data;
-        free(pointer->first);
-        pointer->first = temp; 
-        pointer->count--; 
-        return data;
     }
 }
 
@@ -125,7 +77,7 @@ void queue_print(Queue_Link pointer)
     }
     else
     {
-        Node_Link temp = pointer->first;
+        Queue_Node_Link temp = pointer->first;
         for(int i=0 ; i < pointer->count ; i++)
         {
             printf("%d -> ",temp->data);
@@ -137,9 +89,9 @@ void queue_print(Queue_Link pointer)
 
 void queue_reverse(Queue_Link pointer)
 {
-    Node_Link previous = NULL;
-    Node_Link current = pointer->first;
-    Node_Link next = NULL;
+    Queue_Node_Link previous = NULL;
+    Queue_Node_Link current = pointer->first;
+    Queue_Node_Link next = NULL;
     while( current != NULL)
     {
         next = current->next;
@@ -162,19 +114,27 @@ Queue_Link queue_copy(Queue_Link pointer)
     return new;
 }
 
-void queue_sort(Queue_Link pointer)
+Array_Int queue_to_array(Queue_Link pointer)
 {
     int n = pointer->count;
     int* array = malloc(n*sizeof(int));
     for(int i = 0 ; i < n ; i++)
     {
-        array[i] = queue_delete(pointer);
+        array[i] = queue_dequeue(pointer);
     }
+    return array;
+}
+
+void queue_sort(Queue_Link pointer)
+{
+    int n = pointer->count;
+    Array_Int array = queue_to_array(pointer);
     array_quicksort(array, 0, n-1);
     for(int i = 0 ; i < n ; i++)
     {
-        queue_add(pointer,array[i]);
+        queue_enqueue(pointer,array[i]);
     }
+    queue_reverse(pointer); //reverse beacuse its in desceding order
 }
 
 int main()

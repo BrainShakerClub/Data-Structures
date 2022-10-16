@@ -48,10 +48,10 @@ The **purpose** of this repository is to:
 </dl>
 
 ## **The Data Structures:**
-- [ ] **Arrays**
-
-- [ ] **Stacks**
-- [ ] **Queues** 
+- [x] **Arrays**
+- [x] **Lists**
+- [x] **Stacks**
+- [x] **Queues** 
 - [ ] **Hash Tables** 
 - [ ] **Trees** 
 - [ ] **Heaps** 
