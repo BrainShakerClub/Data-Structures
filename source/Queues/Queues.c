@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "Queues.h"
+#include "Arrays.h"
 
 Queue_Link queue_initialize(Queue_Link pointer) 
 {
@@ -118,7 +119,7 @@ void queue_destroy(Queue_Link pointer)//delete all
 
 void queue_print(Queue_Link pointer)
 {
-    if (pointer == NULL)
+    if ( !pointer )
     {
         printf("NULL\n");
     }
@@ -161,24 +162,6 @@ Queue_Link queue_copy(Queue_Link pointer)
     return new;
 }
 
-int* bubbleSort(int arr[], int n)
-{
-    int i, j;
-    for (i = 0; i < n - 1; i++)
-    {
-        // Last i elements are already in place
-        for (j = 0 ; j < n - i - 1; j++)
-        {
-            if (arr[j] > arr[j + 1])
-            {
-                int temp = arr[j];
-                arr[j] = arr[j+1];
-                arr[j+1] = temp;
-            }
-        }
-    }  
-}
-
 void queue_sort(Queue_Link pointer)
 {
     int n = pointer->count;
@@ -187,7 +170,7 @@ void queue_sort(Queue_Link pointer)
     {
         array[i] = queue_delete(pointer);
     }
-    bubbleSort(array, n);
+    array_quicksort(array, 0, n-1);
     for(int i = 0 ; i < n ; i++)
     {
         queue_add(pointer,array[i]);
@@ -227,10 +210,13 @@ int main()
 
     queue_reverse(entrance);
     queue_print(entrance);
+
     queue_dequeue(entrance);
     queue_print(entrance);
+
     queue_delete(entrance);
     queue_print(entrance);
+
     queue_destroy(entrance);
 
     queue_print(entrance);
