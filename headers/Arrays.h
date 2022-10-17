@@ -1,3 +1,5 @@
-typedef int* Array_Int;
+#pragma once
+
+typedef int* ArrayInt;
+void array_bubblesort(int* array, int n);
 void array_quicksort(int array[], int low, int high);
-int* array_bubblesort(int arr[], int n);
