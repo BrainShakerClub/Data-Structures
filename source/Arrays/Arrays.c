@@ -59,7 +59,7 @@ void array_quicksort(int array[], int low, int high) {
 
 //-----------------BubbleSort--------------------------------------------
 
-int* array_bubblesort(int arr[], int n)
+void array_bubblesort(int* arr, int n)
 {
     int i, j;
     for (i = 0; i < n - 1; i++)

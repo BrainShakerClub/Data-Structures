@@ -3,17 +3,31 @@
 #include <stdlib.h>
 #include "Stacks.h"
 
-Stack_Link stack_initialize(Stack_Link pointer)
+typedef struct StackNode 
+{          
+    int data;
+    struct StackNode *below;    
+}StackNode;
+
+typedef struct Stack
 {
-    pointer = malloc(sizeof(Stack_Link));
+    int count;
+    StackNode* top;
+}Stack;
+
+StackLink stack_initialize()
+{
+    StackLink pointer;
+    pointer = malloc(sizeof(StackLink));
     pointer->count = 0;   
     pointer->top = NULL; 
+    return pointer;
 } 
 
-void stack_push(Stack_Link pointer, int value)
+void stack_push(StackLink pointer, int value)
 {
-    Stack_Node_Link temp;
-    temp = malloc(sizeof(Stack_Node));
+    StackNodeLink temp;
+    temp = malloc(sizeof(StackNode));
     temp->data = value;
 
     temp->below = pointer->top; // Making the previous top the below
@@ -21,11 +35,11 @@ void stack_push(Stack_Link pointer, int value)
     pointer->count++;
 }
 
-int stack_pop(Stack_Link pointer)
+int stack_pop(StackLink pointer)
 {
     if(pointer->count != 0) 
     {
-        Stack_Node_Link temp;
+        StackNodeLink temp;
         temp = pointer->top;
         int n = pointer->top->data; 
         pointer->top = pointer->top->below;  
@@ -39,10 +53,10 @@ int stack_pop(Stack_Link pointer)
     }
 }
 
-Array_Int stack_to_array(Stack_Link pointer)
+Array_Int stack_to_array(StackLink pointer)
 {
     int* arr = malloc(pointer->count * sizeof(int*) );
-    Stack_Node_Link temp = pointer->top;
+    StackNodeLink temp = pointer->top;
     int n = pointer->count - 1;
     while ( temp != NULL )
     {
@@ -53,10 +67,10 @@ Array_Int stack_to_array(Stack_Link pointer)
     return arr;
 }
 
-Stack_Link stack_copy(Stack_Link pointer)
+StackLink stack_copy(StackLink pointer)
 {  
     Array_Int array = stack_to_array(pointer);
-    Stack_Link new = stack_initialize(new);
+    StackLink new = stack_initialize();
     for(int i = 0 ; i < pointer->count ; i++)
     {
         stack_push(new, array[i]);
@@ -65,7 +79,7 @@ Stack_Link stack_copy(Stack_Link pointer)
     return new;
 }
 
-void stack_clear(Stack_Link pointer)
+void stack_clear(StackLink pointer)
 {
     printf("Clearing the stack:\n");
     int i = pointer->count;
@@ -76,29 +90,14 @@ void stack_clear(Stack_Link pointer)
     }
 }
 
-void stack_print(Stack_Link pointer)
+void stack_print(StackLink pointer)
 {
     printf("The stack is:\n");
-    Stack_Link new = stack_copy(pointer);
+    StackLink new = stack_copy(pointer);
     int i = pointer->count;
     while(i > 0) 
     {
         printf("( %d )\n", stack_pop(new));
         i--;
     }
-}
-
-int main()
-{
-    Stack_Link pointer = stack_initialize(pointer);
-    stack_push(pointer, -1);
-    stack_push(pointer, 2);
-    stack_push(pointer, 8);
-    stack_push(pointer, 4);
-    stack_push(pointer, 5);
-    stack_push(pointer, 6);
-    
-    stack_print(pointer);
-    stack_clear(pointer);
-
 }

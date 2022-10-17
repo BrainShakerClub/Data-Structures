@@ -1,20 +1,31 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include "Lists.h"
 #include "Arrays.h"
 
-List_Link list_initialize(List_Link pointer) 
+typedef struct ListNode {
+    int data;
+    struct ListNode* next;
+}ListNode;
+
+typedef struct List {
+    int count;
+    ListNode* first;
+}List;
+
+ListLink list_initialize() 
 {
-    pointer = malloc(sizeof(List));
+    ListLink pointer = malloc(sizeof(List));
     pointer->count = 0;
     pointer->first = NULL;
     return pointer;
 }
 
-void list_enlist(List_Link pointer, int data) //create 1 at start
+void list_enlist(ListLink pointer, int data) //create 1 at start
 {
-    List_Node_Link temp;
-    temp = malloc(sizeof(List_Node)); //Create a node as a "package"
+    ListNodeLink temp;
+    temp = malloc(sizeof(ListNode)); //Create a node as a "package"
     temp->data = data;
     temp->next = NULL;
 
@@ -31,7 +42,7 @@ void list_enlist(List_Link pointer, int data) //create 1 at start
     }
 }
 
-int list_delist(List_Link pointer) //delete 1 at end
+int list_delist(ListLink pointer) //delete 1 at end
 {
     if(pointer->count == 0)
     {
@@ -48,7 +59,7 @@ int list_delist(List_Link pointer) //delete 1 at end
     }
     else
     {
-        List_Node_Link cursor = pointer->first;
+        ListNodeLink cursor = pointer->first;
         for(int i = 2 ; i < pointer->count ; i++)
             cursor = cursor->next;
 
@@ -60,10 +71,10 @@ int list_delist(List_Link pointer) //delete 1 at end
     }
 }
 
-void list_append(List_Link pointer, int data)//create 1 at end
+void list_append(ListLink pointer, int data)//create 1 at end
 {
-    List_Node_Link temp;
-    temp = malloc(sizeof(List_Node)); //Create a node as a "package"
+    ListNodeLink temp;
+    temp = malloc(sizeof(ListNode)); //Create a node as a "package"
     temp->data = data;
     temp->next = NULL;
 
@@ -74,7 +85,7 @@ void list_append(List_Link pointer, int data)//create 1 at end
     }
     else
     {
-        List_Node_Link cursor = pointer->first;
+        ListNodeLink cursor = pointer->first;
         while(cursor->next != NULL)
             cursor = cursor->next;
         cursor->next = temp;
@@ -82,7 +93,7 @@ void list_append(List_Link pointer, int data)//create 1 at end
     }
 }
 
-int list_delete(List_Link pointer)//delete 1 at start
+int list_delete(ListLink pointer)//delete 1 at start
 {
     if(pointer == NULL) 
     {
@@ -99,7 +110,7 @@ int list_delete(List_Link pointer)//delete 1 at start
     }
     else
     {
-        List_Node_Link temp = pointer->first->next;
+        ListNodeLink temp = pointer->first->next;
         int data = pointer->first->data;
         free(pointer->first);
         pointer->first = temp; 
@@ -108,7 +119,7 @@ int list_delete(List_Link pointer)//delete 1 at start
     }
 }
 
-void list_destroy(List_Link pointer)//delete all
+void list_destroy(ListLink pointer)//delete all
 {
     int loops = pointer->count;
     for(int i = 0 ; i < loops ; i++)
@@ -117,7 +128,7 @@ void list_destroy(List_Link pointer)//delete all
     pointer = NULL;
 }
 
-void list_print(List_Link pointer)
+void list_print(ListLink pointer)
 {
     if ( !pointer )
     {
@@ -125,7 +136,7 @@ void list_print(List_Link pointer)
     }
     else
     {
-        List_Node_Link temp = pointer->first;
+        ListNodeLink temp = pointer->first;
         for(int i=0 ; i < pointer->count ; i++)
         {
             printf("%d -> ",temp->data);
@@ -135,11 +146,11 @@ void list_print(List_Link pointer)
     }
 }
 
-void list_reverse(List_Link pointer)
+void list_reverse(ListLink pointer)
 {
-    List_Node_Link previous = NULL;
-    List_Node_Link current = pointer->first;
-    List_Node_Link next = NULL;
+    ListNodeLink previous = NULL;
+    ListNodeLink current = pointer->first;
+    ListNodeLink next = NULL;
     while( current != NULL)
     {
         next = current->next;
@@ -150,9 +161,10 @@ void list_reverse(List_Link pointer)
     pointer->first = previous;
 }
 
-List_Link list_copy(List_Link pointer)
+ListLink list_copy(ListLink pointer)
 {
-    List_Link new = list_initialize(new);
+    ListLink new = list_initialize();
+
     for(int i = 0 ; i < pointer->count ; i++)
     {
         int temp = list_delist(pointer);
@@ -162,7 +174,7 @@ List_Link list_copy(List_Link pointer)
     return new;
 }
 
-Array_Int list_to_array(List_Link pointer)
+ArrayInt list_to_array(ListLink pointer)
 {
     int n = pointer->count;
     int* array = malloc(n*sizeof(int));
@@ -173,11 +185,11 @@ Array_Int list_to_array(List_Link pointer)
     return array;
 }
 
-void list_sort(List_Link pointer)
+void list_sort(ListLink pointer)
 {
     int n = pointer->count;
-    Array_Int array = list_to_array(pointer);
-    array_bubblesortarray(pointer, n);
+    int* array = list_to_array(pointer);
+    array_bubblesort(array, n);
     for(int i = 0 ; i < n ; i++)
     {
         list_enlist(pointer,array[i]);
@@ -185,49 +197,4 @@ void list_sort(List_Link pointer)
     list_reverse(pointer); //reverse beacuse its in desceding order
 }
 
-int main()
-{
-    List_Link entrance = list_initialize(entrance);
 
-    list_append(entrance, 1);
-    list_enlist(entrance, 4);
-    list_append(entrance, 2);
-    list_enlist(entrance, 3);
-    list_append(entrance, 8);
-    list_append(entrance, 6);
-    list_enlist(entrance, 5);
-    list_append(entrance, 7); 
-    
-    list_print(entrance);
-
-    printf("Copying the  starting list...\n");
-    List_Link copy = list_copy(entrance);
-    
-
-    printf("Sorting the list:\n");
-    list_sort(entrance);
-    list_print(entrance);
-
-    printf("Reversing the list:\n");
-    list_reverse(entrance);
-    list_print(entrance);
-
-    printf("The starting was:\n");
-    list_print(copy);
-    list_destroy(copy);
-
-    list_reverse(entrance);
-    list_print(entrance);
-
-    list_delist(entrance);
-    list_print(entrance);
-
-    list_delete(entrance);
-    list_print(entrance);
-
-    list_destroy(entrance);
-
-    list_print(entrance);
-
-    return 0;
-}

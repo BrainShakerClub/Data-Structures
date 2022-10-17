@@ -1,20 +1,32 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include "Queues.h"
 #include "Arrays.h"
 
-Queue_Link queue_initialize(Queue_Link pointer) 
+typedef struct QueueNode {
+    int data;
+    struct QueueNode* next;
+}QueueNode;
+
+typedef struct Queue {
+    int count;
+    QueueNode* first;
+}Queue;
+
+QueueLink queue_initialize() 
 {
+    QueueLink pointer;
     pointer = malloc(sizeof(Queue));
     pointer->count = 0;
     pointer->first = NULL;
     return pointer;
 }
 
-void queue_enqueue(Queue_Link pointer, int data) //create 1 at start
+void queue_enqueue(QueueLink pointer, int data) //create 1 at start
 {
-    Queue_Node_Link temp;
-    temp = malloc(sizeof(Queue_Node)); //Create a node as a "package"
+    QueueNodeLink temp;
+    temp = malloc(sizeof(QueueNode)); //Create a node as a "package"
     temp->data = data;
     temp->next = NULL;
 
@@ -31,7 +43,7 @@ void queue_enqueue(Queue_Link pointer, int data) //create 1 at start
     }
 }
 
-int queue_dequeue(Queue_Link pointer) //delete 1 at end
+int queue_dequeue(QueueLink pointer) //delete 1 at end
 {
     if(pointer->count == 0)
     {
@@ -48,7 +60,7 @@ int queue_dequeue(Queue_Link pointer) //delete 1 at end
     }
     else
     {
-        Queue_Node_Link cursor = pointer->first;
+        QueueNodeLink cursor = pointer->first;
         for(int i = 2 ; i < pointer->count ; i++)
             cursor = cursor->next;
 
@@ -60,7 +72,7 @@ int queue_dequeue(Queue_Link pointer) //delete 1 at end
     }
 }
 
-void queue_destroy(Queue_Link pointer)//delete all
+void queue_destroy(QueueLink pointer)//delete all
 {
     int loops = pointer->count;
     for(int i = 0 ; i < loops ; i++)
@@ -69,7 +81,7 @@ void queue_destroy(Queue_Link pointer)//delete all
     pointer = NULL;
 }
 
-void queue_print(Queue_Link pointer)
+void queue_print(QueueLink pointer)
 {
     if ( !pointer )
     {
@@ -77,7 +89,7 @@ void queue_print(Queue_Link pointer)
     }
     else
     {
-        Queue_Node_Link temp = pointer->first;
+        QueueNodeLink temp = pointer->first;
         for(int i=0 ; i < pointer->count ; i++)
         {
             printf("%d -> ",temp->data);
@@ -87,11 +99,11 @@ void queue_print(Queue_Link pointer)
     }
 }
 
-void queue_reverse(Queue_Link pointer)
+void queue_reverse(QueueLink pointer)
 {
-    Queue_Node_Link previous = NULL;
-    Queue_Node_Link current = pointer->first;
-    Queue_Node_Link next = NULL;
+    QueueNodeLink previous = NULL;
+    QueueNodeLink current = pointer->first;
+    QueueNodeLink next = NULL;
     while( current != NULL)
     {
         next = current->next;
@@ -102,9 +114,9 @@ void queue_reverse(Queue_Link pointer)
     pointer->first = previous;
 }
 
-Queue_Link queue_copy(Queue_Link pointer)
+QueueLink queue_copy(QueueLink pointer)
 {
-    Queue_Link new = queue_initialize(new);
+    QueueLink new = queue_initialize();
     for(int i = 0 ; i < pointer->count ; i++)
     {
         int temp = queue_dequeue(pointer);
@@ -114,7 +126,7 @@ Queue_Link queue_copy(Queue_Link pointer)
     return new;
 }
 
-Array_Int queue_to_array(Queue_Link pointer)
+ArrayInt queue_to_array(QueueLink pointer)
 {
     int n = pointer->count;
     int* array = malloc(n*sizeof(int));
@@ -125,61 +137,14 @@ Array_Int queue_to_array(Queue_Link pointer)
     return array;
 }
 
-void queue_sort(Queue_Link pointer)
+void queue_sort(QueueLink pointer)
 {
     int n = pointer->count;
-    Array_Int array = queue_to_array(pointer);
+    ArrayInt array = queue_to_array(pointer);
     array_quicksort(array, 0, n-1);
     for(int i = 0 ; i < n ; i++)
     {
         queue_enqueue(pointer,array[i]);
     }
     queue_reverse(pointer); //reverse beacuse its in desceding order
-}
-
-int main()
-{
-    Queue_Link entrance = queue_initialize(entrance);
-
-    queue_add(entrance, 1);
-    queue_enqueue(entrance, 4);
-    queue_add(entrance, 2);
-    queue_enqueue(entrance, 3);
-    queue_add(entrance, 8);
-    queue_add(entrance, 6);
-    queue_enqueue(entrance, 5);
-    queue_add(entrance, 7); 
-    
-    queue_print(entrance);
-
-    printf("Copying the  starting queue...\n");
-    Queue_Link copy = queue_copy(entrance);
-    
-
-    printf("Sorting the queue:\n");
-    queue_sort(entrance);
-    queue_print(entrance);
-
-    printf("Reversing the queue:\n");
-    queue_reverse(entrance);
-    queue_print(entrance);
-
-    printf("The starting was:\n");
-    queue_print(copy);
-    queue_destroy(copy);
-
-    queue_reverse(entrance);
-    queue_print(entrance);
-
-    queue_dequeue(entrance);
-    queue_print(entrance);
-
-    queue_delete(entrance);
-    queue_print(entrance);
-
-    queue_destroy(entrance);
-
-    queue_print(entrance);
-
-    return 0;
 }
