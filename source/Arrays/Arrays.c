@@ -62,12 +62,12 @@ void array_quicksort(int array[], int low, int high) {
 void array_bubblesort(int* arr, int n)
 {
     int i, j;
-    for (i = 0; i < n - 1; i++)
+    for (i = 0; i < n - 1; i++) //for every element (last one already sorted, thats why -1)
     {
         // Last i elements are already in place
         for (j = 0 ; j < n - i - 1; j++)
         {
-            if (arr[j] > arr[j + 1])
+            if (arr[j] > arr[j + 1]) //swap woth the next if current greater
             {
                 int temp = arr[j];
                 arr[j] = arr[j+1];
