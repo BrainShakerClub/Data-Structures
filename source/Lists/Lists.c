@@ -119,13 +119,14 @@ int list_delete(ListLink pointer)//delete 1 at start
     }
 }
 
-void list_destroy(ListLink pointer)//delete all
+ListLink list_destroy(ListLink pointer)//delete all
 {
     int loops = pointer->count;
     for(int i = 0 ; i < loops ; i++)
         list_delist(pointer);
     free(pointer);
     pointer = NULL;
+    return pointer;
 }
 
 void list_print(ListLink pointer)

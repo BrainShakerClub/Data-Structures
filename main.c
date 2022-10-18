@@ -35,7 +35,7 @@ printf("-----------LISTS--------------------\n");
     list_print(entrance);
     list_delete(entrance);
     list_print(entrance);
-    list_destroy(entrance);
+    entrance = list_destroy(entrance);
     list_print(entrance);
 printf("-----------STACKS--------------------\n");
     StackLink pointer = stack_initialize();
@@ -47,6 +47,7 @@ printf("-----------STACKS--------------------\n");
     stack_push(pointer, 6);
     stack_print(pointer);
     stack_clear(pointer);
+    stack_print(pointer);
 printf("-----------Queues--------------------\n");
     QueueLink p = queue_initialize();
     queue_enqueue(p, 13);
@@ -74,7 +75,7 @@ printf("-----------Queues--------------------\n");
     queue_dequeue(p);
     queue_print(p);
     
-    queue_destroy(p);
+    p = queue_destroy(p);
     queue_print(p);
 
     return 0;

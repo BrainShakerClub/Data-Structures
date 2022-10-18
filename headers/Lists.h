@@ -8,7 +8,7 @@ void list_enlist(ListLink pointer, int data);
 int list_delist(ListLink pointer);
 void list_append(ListLink pointer, int data);
 int list_delete(ListLink pointer);
-void list_destroy(ListLink pointer);
+ListLink list_destroy(ListLink pointer);
 void list_print(ListLink pointer);
 void list_reverse(ListLink pointer);
 ListLink list_copy(ListLink pointer);

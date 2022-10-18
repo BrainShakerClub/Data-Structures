@@ -72,18 +72,19 @@ int queue_dequeue(QueueLink pointer) //delete 1 at end
     }
 }
 
-void queue_destroy(QueueLink pointer)//delete all
+QueueLink queue_destroy(QueueLink pointer)//delete all
 {
     int loops = pointer->count;
     for(int i = 0 ; i < loops ; i++)
         queue_dequeue(pointer);
     free(pointer);
     pointer = NULL;
+    return pointer;
 }
 
 void queue_print(QueueLink pointer)
 {
-    if ( !pointer )
+    if ( !pointer || pointer->count == 0)
     {
         printf("NULL\n");
     }
