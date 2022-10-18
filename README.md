@@ -49,12 +49,13 @@ The **purpose** of this repository is to:
 
 ## **The Data Structures:**
 - [x] **Arrays**
+  
 - [x] **Lists**
 - [x] **Stacks**
 - [x] **Queues** 
 - [ ] **Hash Tables** 
-- [ ] **Trees** 
 - [ ] **Heaps** 
+- [ ] **Trees** 
 - [ ] **Graphs** 
 
 - [x] **Ambitions**
