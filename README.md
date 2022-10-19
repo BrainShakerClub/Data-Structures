@@ -53,9 +53,9 @@ The **purpose** of this repository is to:
 - [x] **Lists**
 - [x] **Stacks**
 - [x] **Queues** 
-- [ ] **Hash Tables** 
-- [ ] **Heaps** 
-- [ ] **Trees** 
+- [ ] **Hash Tables**  
+- [x] **BinaryTrees**
+- [ ] **RedBlackTrees**
 - [ ] **Graphs** 
 
 - [x] **Ambitions**
