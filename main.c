@@ -5,6 +5,7 @@
 #include "Queues.h"
 #include "Stacks.h"
 #include "BinaryTrees.h"
+#include "RedBlackTrees.h"
 
 int main()
 {
@@ -79,7 +80,7 @@ printf("-----------Queues--------------------\n");
     p = queue_destroy(p);
     queue_print(p);
 
-    printf("-----------Binary Trees--------------------\n");
+    printf("-----------BINARY TREES--------------------\n");
     BinaryTreeLink TreeA = binary_tree_make_tree(2);
     printf("Initializing TreeA. The root item of TreeA is: %d\n", binary_tree_root(TreeA));
 
@@ -177,6 +178,70 @@ printf("-----------Queues--------------------\n");
 
     printf("Destroying TreeC by freeing all of its nodes\n");
     binary_tree_destroy(TreeC);
+
+
+    printf("-----------RED BLACK TREES--------------------\n");
+    printf("Initializing empty tree\n");
+    RedBlackTreeLink RB = red_black_tree_initialize();
+
+    /* Inserting and removing items to achieve tree of Red-Black Trees pdf, starting at page 38 (found in lectures) */
+    printf("Inserting item 4\n");
+    red_black_tree_insert_key(&RB, 4);
+
+    printf("Inserting item 7\n");
+    red_black_tree_insert_key(&RB, 7);
+
+    printf("Inserting item 12\n");
+    red_black_tree_insert_key(&RB, 12);
+
+    printf("Inserting item 15\n");
+    red_black_tree_insert_key(&RB, 15);
+
+    printf("Inserting item 3\n");
+    red_black_tree_insert_key(&RB, 3);
+
+    printf("Inserting item 5\n");
+    red_black_tree_insert_key(&RB, 5);
+
+    printf("Inserting item 14\n");
+    red_black_tree_insert_key(&RB, 14);
+
+    printf("Inserting item 18\n");
+    red_black_tree_insert_key(&RB, 18);
+
+    printf("Inserting item 16\n");
+    red_black_tree_insert_key(&RB, 16);
+
+    printf("Inserting item 17\n");
+    red_black_tree_insert_key(&RB, 17);
+    
+    printf("Item 12 was%sfound in tree\n", (red_black_tree_search(RB, 12) == NULLitem) ? " not " : " ");
+    printf("Item 33 was%sfound in tree\n", (red_black_tree_search(RB, 33) == NULLitem) ? " not " : " ");
+    printf("Now printing keys in ascending order using red_black_tree_print_elements: ");
+    red_black_tree_print_elements(RB);
+
+    printf("Removing item 3\n");
+    red_black_tree_remove_key(&RB, 3);
+
+    printf("Removing item 12\n");
+    red_black_tree_remove_key(&RB, 12);
+
+    printf("Removing item 17\n");
+    red_black_tree_remove_key(&RB, 17);
+
+    printf("Removing item 18\n");
+    red_black_tree_remove_key(&RB, 18);
+
+    printf("Removing item 15\n");
+    red_black_tree_remove_key(&RB, 15);
+
+    printf("Removing item 16\n");
+    red_black_tree_remove_key(&RB, 16);
+
+    printf("Item 12 was%sfound in tree\n", (red_black_tree_search(RB, 12) == NULLitem) ? " not " : " ");
+    printf("Item 33 was%sfound in tree\n", (red_black_tree_search(RB, 33) == NULLitem) ? " not " : " ");
+    printf("Now printing keys in ascending order using red_black_tree_print_elements: ");
+    red_black_tree_print_elements(RB);
 
     return 0;
 

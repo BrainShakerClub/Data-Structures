@@ -35,7 +35,7 @@ int binary_tree_root(BinaryTreeLink root)
 
 
 
-BinaryTreeLink parent_of(BinaryTreeLink tree, BinaryTreeLink node)
+BinaryTreeLink binary_tree_parent_of(BinaryTreeLink tree, BinaryTreeLink node)
 {                                       /* Returns the parent node of a given node */
     BinaryTreeLink ParentNode;                                                        /* Get the parent */
     BinaryTreeLink ChildNode = tree;                                                  /* Get the child */
@@ -56,7 +56,7 @@ int binary_tree_parent(BinaryTreeLink tree, BinaryTreeLink node)
 {                       /* Returns the element at the parent of a node*/
     if (tree == node) return NULLitem;                      /* If inserted root, return NULLitem */
 
-    BinaryTreeLink ParentNode = parent_of(tree, node);                 /* Get the parent */
+    BinaryTreeLink ParentNode = binary_tree_parent_of(tree, node);                 /* Get the parent */
     if (ParentNode != NULL) return ParentNode->item;        /* If Parent isn't NULL, return the item at the ParentNode */
     else return NULLitem;                                   /* Else, return NULLitem */
 }
@@ -67,7 +67,7 @@ int binary_tree_sibling(BinaryTreeLink tree, BinaryTreeLink node)
 {                                                                  /* Returns the element at the sibling of a node*/
     if (tree == node) return NULLitem;                                                                  /* If inserted root, return NULLitem */
 
-    BinaryTreeLink ParentNode = parent_of(tree, node);                                                             /* Get the parent */
+    BinaryTreeLink ParentNode = binary_tree_parent_of(tree, node);                                                             /* Get the parent */
     if (node == ParentNode->right && ParentNode->left != NULL) return ParentNode->left->item;           /* If the sibling is not NULL, return its item */
     else if (node == ParentNode->left && ParentNode->right != NULL) return ParentNode->right->item;
     else return NULLitem;                                                                               /* Else, rerturn NULLitem */
@@ -129,7 +129,7 @@ void binary_tree_attach(BinaryTreeLink node, BinaryTreeLink left, BinaryTreeLink
 
 void binary_tree_remove(BinaryTreeLink tree, BinaryTreeLink node)
 {                                       /* Removes a node with zero or one child which is an external node */
-    BinaryTreeLink ParentNode = parent_of(tree, node);                                 /* Get the parent */
+    BinaryTreeLink ParentNode = binary_tree_parent_of(tree, node);                                 /* Get the parent */
     
     if (node->item < ParentNode->item) {                                    /* If the node is the left child of ParentNode, */
         if (binary_tree_is_external(node)) ParentNode->left = NULL;                    /* If node is external, make ParentNode pointer NULL */
