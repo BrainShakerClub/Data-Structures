@@ -14,7 +14,7 @@ struct RBNode {
 static RedBlackTreeLink z;
 
 /* -----RBinitialize----- */
-RedBlackTreeLink new(int item, RedBlackTreeLink l, RedBlackTreeLink r, char color)
+RedBlackTreeLink red_black_tree_new(int item, RedBlackTreeLink l, RedBlackTreeLink r, char color)
 {    /* Create a new RedBlackTreeLink */
     RedBlackTreeLink x = malloc(sizeof *x);
     x->item = item;
@@ -26,7 +26,7 @@ RedBlackTreeLink new(int item, RedBlackTreeLink l, RedBlackTreeLink r, char colo
 
 RedBlackTreeLink red_black_tree_initialize()
 {                           /* Initialize a new red-black tree */
-    z = new(NULLitem, NULL, NULL, black);       /* Initialize the dummy node */
+    z = red_black_tree_new(NULLitem, NULL, NULL, black);       /* Initialize the dummy node */
     return z;                                   /* Then, return it. This allows the user to create multiple red-black trees */
 }
 /* -------------------- */
@@ -136,7 +136,7 @@ void check_for_double_red(RedBlackTreeLink *head, RedBlackTreeLink ChildNode, Re
 void red_black_tree_insert_key(RedBlackTreeLink *head, int item)
 {                      /* Insert a new item */
     if (*head == z) {                                           /* If the tree is empty, insert it at root */
-        *head = new(item, z, z, black);
+        *head = red_black_tree_new(item, z, z, black);
         printf("This is the tree after correct insertion(printed in preorder): ");   /* Finish by printing the tree */
         red_black_tree_preorder(*head);
         return;
@@ -157,11 +157,11 @@ void red_black_tree_insert_key(RedBlackTreeLink *head, int item)
     }
 
     if (item < ParentNode->item) {                              /* If the inserted item is less than the leaf node's item, place item in left child */
-        ParentNode->l = new(item, z, z, red);
+        ParentNode->l = red_black_tree_new(item, z, z, red);
         ChildNode = ParentNode->l;
     }
     else {                                                      /* Else, save to right child */
-        ParentNode->r = new(item, z, z, red);
+        ParentNode->r = red_black_tree_new(item, z, z, red);
         ChildNode = ParentNode->r;
     }
 
