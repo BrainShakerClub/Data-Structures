@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 #include "Arrays.h"
 #include "Lists.h"
 #include "Queues.h"
@@ -10,8 +11,9 @@
 #include "PriorityQueues.h"
 #include "DirectedGraphs.h"
 #include "UndirectedGraphs.h"
+#include "HashTable.h"
 
-int main()
+int main(void)
 {
 printf("-----------LISTS--------------------\n");
     ListLink entrance = list_initialize();
@@ -315,12 +317,36 @@ printf("-----------UNDIRECTED GRAPHS--------------------\n");
     undirected_graph_simple_path_check(UG, 1, 0);
     printf("\nLet's see if a simple path exists from 2 to 7\n");
     undirected_graph_simple_path_check(UG, 2, 7);
-
     fclose(file1);
 
+printf("\n-----------HASH TABLE--------------------\n");
+    HashTable ht = hash_initialize();
+
+    // test insert
+    srand(time(NULL));
+    for (int i = 0; i < 1000; i++)
+        hash_insert(ht, i);
+
+    // test search
+    if (!hash_search(ht, 0))
+        printf("ERROR\n");
+
+    // test size
+    if (hash_size(ht) != 1000)
+        printf("ERROR\n");
+
+    // test remove
+    for (int i = 0; i < 1000; i++)
+        if (!hash_remove(ht, i))
+            printf("ERROR\n");
+
+    if (hash_size(ht) > 0)
+        printf("ERROR\n");
+
+    hash_destroy(ht);
+    printf("Hash Table passed all tests!\n");
     
     return 0;
-
 }
 
 
