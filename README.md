@@ -52,10 +52,12 @@ The **purpose** of this repository is to:
   
 - [x] **Lists**
 - [x] **Stacks**
-- [x] **Queues** 
+- [x] **Queues**
+- [x] **Priority Queues**
 - [ ] **Hash Tables**  
-- [x] **BinaryTrees**
-- [x] **RedBlackTrees**
-- [ ] **Graphs** 
+- [x] **Binary Trees**
+- [x] **Red-Black Trees**
+- [x] **Directed Graphs**
+- [ ] **Undirected Graphs**
 
 - [x] **Ambitions**
