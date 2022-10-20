@@ -58,6 +58,6 @@ The **purpose** of this repository is to:
 - [x] **Binary Trees**
 - [x] **Red-Black Trees**
 - [x] **Directed Graphs**
-- [ ] **Undirected Graphs**
+- [x] **Undirected Graphs**
 
 - [x] **Ambitions**
