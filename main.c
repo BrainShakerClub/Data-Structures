@@ -9,6 +9,7 @@
 #include "RedBlackTrees.h"
 #include "PriorityQueues.h"
 #include "DirectedGraphs.h"
+#include "UndirectedGraphs.h"
 
 int main()
 {
@@ -83,7 +84,7 @@ printf("-----------Queues--------------------\n");
     p = queue_destroy(p);
     queue_print(p);
 
-    printf("-----------BINARY TREES--------------------\n");
+printf("-----------BINARY TREES--------------------\n");
     BinaryTreeLink TreeA = binary_tree_make_tree(2);
     printf("Initializing TreeA. The root item of TreeA is: %d\n", binary_tree_root(TreeA));
 
@@ -183,7 +184,7 @@ printf("-----------Queues--------------------\n");
     binary_tree_destroy(TreeC);
 
 
-    printf("-----------RED BLACK TREES--------------------\n");
+printf("-----------RED BLACK TREES--------------------\n");
     printf("Initializing empty tree\n");
     RedBlackTreeLink RB = red_black_tree_initialize();
 
@@ -246,16 +247,16 @@ printf("-----------Queues--------------------\n");
     red_black_tree_print_elements(RB);
 
 
-    printf("-----------DIRECTED GRAPHS--------------------\n");
-    FILE* file;
-    file = fopen("./graph_examples/DirectedGraph.txt", "r");
-    if (file == NULL) {
+printf("-----------DIRECTED GRAPHS--------------------\n");
+    FILE* file1;
+    file1 = fopen("./graph_examples/DirectedGraph.txt", "r");
+    if (file1 == NULL) {
         printf("File can't be opened. Exiting...\n");
         return 1;
     }
 
     char line[100];
-    fgets(line,sizeof line, file); /* Read first line (this is where the size of the graph is written) */
+    fgets(line,sizeof line, file1);
     int size = atoi(line);
     if (size > MAXVERTEX) {
         printf("Sorry, max amount of vertices is %d. Exiting...\n", MAXVERTEX);
@@ -263,11 +264,11 @@ printf("-----------Queues--------------------\n");
     }
     DirectedGraph G = directed_graph_initialize(size);
 
-    while(fgets(line,sizeof line, file)!= NULL) {   /* Read the rest of the file one line at a time */
-        line[strcspn(line, "\n")] = 0;              /* Ignore \n */
-        printf("Now inserting %s\n", line);         /* Insert read edge */
+    while(fgets(line,sizeof line, file1)!= NULL) {
+        line[strcspn(line, "\n")] = 0;
+        printf("Now inserting %s\n", line);
         directed_graph_insert_edge(G, line);
-        printf("The graph is:\n");                  /* Print the graph */
+        printf("The graph is:\n");
         directed_graph_show_graph(G); printf("\n");
     }
 
@@ -281,7 +282,43 @@ printf("-----------Queues--------------------\n");
     printf("Topological sort of G is: ");
     directed_graph_breadth_top_sort(G);
 
-    fclose(file);
+    fclose(file1);
+
+printf("-----------UNDIRECTED GRAPHS--------------------\n");
+    FILE* file2;
+    file2 = fopen("./graph_examples/UndirectedGraph.txt", "r");
+    if (file2 == NULL) {
+        printf("File can't be opened. Exiting...\n");
+        return 1;
+    }
+
+    fgets(line,sizeof line, file2);
+    size = atoi(line);
+    if (size > MAXVERTEX) {
+        printf("Sorry, max amount of vertices is %d. Exiting...\n", MAXVERTEX);
+        return -1;
+    }
+
+    UndirectedGraph UG = undirected_graph_initialize(size);
+
+    while(fgets(line,sizeof line,file2)!= NULL) {
+        line[strcspn(line, "\n")] = 0;
+        printf("Now inserting %s\n", line);
+        undirected_graph_insert_edge(UG, line);
+        printf("The graph is:\n");
+        undirected_graph_show_graph(UG); printf("\n");
+    }
+
+    printf("Let's see if a simple path exists from 1 to 6\n");
+    undirected_graph_simple_path_check(UG, 1, 6);
+    printf("\nLet's see if a simple path exists from 1 to 0\n");
+    undirected_graph_simple_path_check(UG, 1, 0);
+    printf("\nLet's see if a simple path exists from 2 to 7\n");
+    undirected_graph_simple_path_check(UG, 2, 7);
+
+    fclose(file1);
+
+    
     return 0;
 
 }

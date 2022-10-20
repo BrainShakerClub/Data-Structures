@@ -18,7 +18,7 @@ struct graph {
 
 
 /* -----directed_graph_initialize----- */
-EdgePtr dummy(void)
+EdgePtr directed_graph_dummy(void)
 {                   /* Returns a dummy edge. Dummy edges are noted by endpoint=-1 and nextedge=NULL */
     EdgePtr E = malloc(sizeof(*E));
     E->endpoint = -1;
@@ -31,7 +31,7 @@ DirectedGraph directed_graph_initialize(int size)
     DirectedGraph G = malloc(sizeof(*G));
     G->n = size;
     for (int i = 0 ; i < MAXVERTEX ; i++) {
-        G->firstedge[i] = dummy();
+        G->firstedge[i] = directed_graph_dummy();
     }
     return G;
 }
@@ -69,7 +69,7 @@ void directed_graph_insert_edge(DirectedGraph G, char *Given_Edge)
     /* If this is the first endpoint, insert it directly */
     if (Current->endpoint == -1) {          
         Current->endpoint = ending_vertex;
-        Current->nextedge = dummy();
+        Current->nextedge = directed_graph_dummy();
         return;
     }
 
@@ -84,7 +84,7 @@ void directed_graph_insert_edge(DirectedGraph G, char *Given_Edge)
         else Current = Current->nextedge;
     }
     Current->endpoint = ending_vertex;
-    Current->nextedge = dummy();
+    Current->nextedge = directed_graph_dummy();
 }
 /* -----END----- */
 

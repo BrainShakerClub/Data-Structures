@@ -12,7 +12,8 @@ OBJS = main.o \
 	$(SRC)/BinaryTrees/BinaryTrees.o \
 	$(SRC)/RedBlackTrees/RedBlackTrees.o \
 	$(SRC)/PriorityQueues/PriorityQueues.o \
-	$(SRC)/DirectedGraphs/DirectedGraphs.o
+	$(SRC)/DirectedGraphs/DirectedGraphs.o \
+	$(SRC)/UndirectedGraphs/UndirectedGraphs.o \
 
 %.o: %.c
 	@$(CC) -c -o $@ $< $(CFLAGS)
