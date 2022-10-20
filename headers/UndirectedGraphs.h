@@ -1,3 +1,5 @@
+#pragma once
+
 #define MAXVERTEX 10
 
 typedef int Vertex;

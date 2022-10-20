@@ -14,6 +14,7 @@ OBJS = main.o \
 	$(SRC)/PriorityQueues/PriorityQueues.o \
 	$(SRC)/DirectedGraphs/DirectedGraphs.o \
 	$(SRC)/UndirectedGraphs/UndirectedGraphs.o \
+	$(SRC)/HashTables/HashTable.o
 
 %.o: %.c
 	@$(CC) -c -o $@ $< $(CFLAGS)

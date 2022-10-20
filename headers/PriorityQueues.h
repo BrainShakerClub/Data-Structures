@@ -1,3 +1,5 @@
+#pragma once
+
 #define MAXCOUNT 10
 typedef struct PriorityQueue* PriorityQueuePointer;
 

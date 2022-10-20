@@ -1,3 +1,5 @@
+#pragma once
+
 #define NULLitem -1
 
 typedef struct RBNode* RedBlackTreeLink;

@@ -2,6 +2,7 @@
     "files.associations": {
         "stdlib.h": "c",
         "binarytree.h": "c",
-        "binarytrees.h": "c"
+        "binarytrees.h": "c",
+        "stdbool.h": "c"
     }
 }
