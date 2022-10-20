@@ -1,11 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "Arrays.h"
 #include "Lists.h"
 #include "Queues.h"
 #include "Stacks.h"
 #include "BinaryTrees.h"
 #include "RedBlackTrees.h"
+#include "PriorityQueues.h"
+#include "DirectedGraphs.h"
 
 int main()
 {
@@ -184,7 +187,6 @@ printf("-----------Queues--------------------\n");
     printf("Initializing empty tree\n");
     RedBlackTreeLink RB = red_black_tree_initialize();
 
-    /* Inserting and removing items to achieve tree of Red-Black Trees pdf, starting at page 38 (found in lectures) */
     printf("Inserting item 4\n");
     red_black_tree_insert_key(&RB, 4);
 
@@ -243,6 +245,43 @@ printf("-----------Queues--------------------\n");
     printf("Now printing keys in ascending order using red_black_tree_print_elements: ");
     red_black_tree_print_elements(RB);
 
+
+    printf("-----------DIRECTED GRAPHS--------------------\n");
+    FILE* file;
+    file = fopen("./graph_examples/DirectedGraph.txt", "r");
+    if (file == NULL) {
+        printf("File can't be opened. Exiting...\n");
+        return 1;
+    }
+
+    char line[100];
+    fgets(line,sizeof line, file); /* Read first line (this is where the size of the graph is written) */
+    int size = atoi(line);
+    if (size > MAXVERTEX) {
+        printf("Sorry, max amount of vertices is %d. Exiting...\n", MAXVERTEX);
+        return -1;
+    }
+    DirectedGraph G = directed_graph_initialize(size);
+
+    while(fgets(line,sizeof line, file)!= NULL) {   /* Read the rest of the file one line at a time */
+        line[strcspn(line, "\n")] = 0;              /* Ignore \n */
+        printf("Now inserting %s\n", line);         /* Insert read edge */
+        directed_graph_insert_edge(G, line);
+        printf("The graph is:\n");                  /* Print the graph */
+        directed_graph_show_graph(G); printf("\n");
+    }
+
+    printf("\nNow reversing the graph. The reversed graph is:\n");
+    DirectedGraph K = directed_graph_reverse(G);
+    directed_graph_show_graph(K);
+
+    printf("DFS Traversal of G is: ");
+    directed_graph_depth_first(G, directed_graph_vertex_show);
+
+    printf("Topological sort of G is: ");
+    directed_graph_breadth_top_sort(G);
+
+    fclose(file);
     return 0;
 
 }
