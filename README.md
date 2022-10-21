@@ -11,6 +11,7 @@
  <p align="center">
  <img src="assets/BrainShaker.jpg" alt="BrainShaker" width="200" />
  <br>
+ <br>
  <a href="LICENSE">Copyright (c)
     </a>
     2022
@@ -18,8 +19,8 @@
         <b>Brain Shaker Computer Club</b>
         <br>
     </a> 
-
 </p>
+<br>
 
 > [**Antonis Kalantzis**](https://github.com/tonykalantzis)
 
