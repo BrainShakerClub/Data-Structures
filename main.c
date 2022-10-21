@@ -15,7 +15,7 @@
 
 int main(void)
 {
-/*printf("-----------LISTS--------------------\n");
+printf("-----------LISTS--------------------\n");
     ListLink entrance = list_initialize();
     list_append(entrance, 1);
     list_enlist(entrance, 4);
@@ -344,7 +344,7 @@ printf("\n-----------HASH TABLE(linear probing)--------------------\n");
         printf("ERROR\n");
 
     hash_destroy(ht);
-    printf("Hash Table passed all tests!\n"); */
+    printf("Hash Table passed all tests!\n");
  
     printf("\n-----------HASH TABLE(seperate chaining)--------------------\n");
 
