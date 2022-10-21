@@ -8,8 +8,8 @@
 
 <p align="center">
     <a href="https://github.com/BrainShakerClub/ADT-library/blob/main/assets/LICENSE">Copyright (c)
-    </a>    
-    2022 
+    </a>
+    2022
         <a href="https://github.com/BrainShakerClub">
             <b>Brain Shaker Computer Club</b>
             <br>
@@ -26,13 +26,29 @@
 > [**Mixalis Kostagiannis**](https://github.com/MikeRaphK)
 
 ## **Purpose**
-The **purpose** of this repository is to: 
-1. Provide a **base** and a **starting point** code-wise and theoretically for anyone **learning data structures**  in **C** language, with simplistic **easy to understand** code and plethora of documentation.
+The **purpose** of this repository is to:
 
-2. **Convert** these simple **Data Types**, to **Abrastact Data Types** (in generic form). Addressing a more **advanced developer**, providing a **ready-to-use library** campatible with C and C++ with **complex structs** (ex. RedBackTrees e.t.c), developted using the **void*** pointer.
+ Provide a **library** writen in **C** with **all** the **popular** **data structures** that there are. We opted for a binary functionality:
+
+1. Easy to **use**. We wanted to provide **ready-to-use** **data structs** just **like** in **high-level languages**
+
+2. Easy to **understand code**(style, variable names, types e.t.c). Providing solid algorithimic and theoretical foundations of the structures.Also food for thought on the technical part. Over all an opportunity of deepening c understanding.
 
 
-## **Directories** 
+## **How to use**
+### - **The library**
+"Insert giorgi's knowledge of how to compile a lib"
+
+### - **Specific Function**
+* All functions have the format:
+ ```c
+ data_struct_function()
+ ```
+* All structures use **types** of **integers**
+
+* **Specific usage** can be found in the **documentation** of each structure
+
+## **Directories**
 
 <dl>
   <dt><strong>assets/</strong></dt>
@@ -40,7 +56,7 @@ The **purpose** of this repository is to:
   <dt><strong>headers/</strong></dt>
     <dt>└───The <strong>prototypes</strong> of the structs</dd>
   <dt><strong>library/</strong></dt>
-    <dt>└───The final <strong>product</strong> with the makefile and the <b>.a</b> file</dd>    
+    <dt>└───The final <strong>product</strong> with the makefile and the <b>.a</b> file</dd>
   <dt><strong>source/</strong></dt>
     <dt>└───The <strong>source code</strong> ( .c files)</dd>
   <dt><strong>README.md</strong></dt>
@@ -49,19 +65,19 @@ The **purpose** of this repository is to:
 
 ## **The Data Structures:**
 - [x] [**Arrays**](source/Arrays/Arrays.c)
-  
+
 - [x] [**Lists**](source/Lists/Lists.c)
-  
+
 - [x] [**Stacks**](source/Stacks/Stacks.c)
-  
+
 - [x] [**Queues**](source/Queues/Queues.c)
 
 - [x] [**Priority Queues**](source/PriorityQueues/PriorityQueues.c)
-  
+
 - [x] [**Hash Tables**](source/HashTables/HashTable.c)
-  
+
 - [x] [**Binary Trees**](source/BinaryTrees/BinaryTrees.c)
-  
+
 - [x] [**Red-Black Trees**](source/RedBlackTrees/RedBlackTrees.c)
 
 - [x] [**Directed Graphs**](source/DirectedGraphs/DirectedGraphs.c)
