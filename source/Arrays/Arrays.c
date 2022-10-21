@@ -4,6 +4,7 @@
 #include "Arrays.h"
 
 //------------------QuickSort--------------------------------------------
+
 // function to swap elements
 void swap(int* a, int* b) { //change the contents of memory address
   int t = *a;
@@ -56,7 +57,7 @@ void array_quicksort(int array[], int low, int high) {
     array_quicksort(array, pi + 1, high);
   }
 }
-
+//the quicksort code is from: https://www.programiz.com/dsa/quick-sortt that helped with optimizing sorting an array in the other structs
 //-----------------BubbleSort--------------------------------------------
 
 void array_bubblesort(int* arr, int n)

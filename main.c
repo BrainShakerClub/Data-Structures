@@ -15,7 +15,7 @@
 
 int main(void)
 {
-printf("-----------LISTS--------------------\n");
+/*printf("-----------LISTS--------------------\n");
     ListLink entrance = list_initialize();
     list_append(entrance, 1);
     list_enlist(entrance, 4);
@@ -24,7 +24,7 @@ printf("-----------LISTS--------------------\n");
     list_append(entrance, 8);
     list_append(entrance, 6);
     list_enlist(entrance, 5);
-    list_append(entrance, 7); 
+    list_append(entrance, 7);
     list_print(entrance);
     printf("Copying the  starting list...\n");
     ListLink copy = list_copy(entrance);
@@ -82,7 +82,7 @@ printf("-----------Queues--------------------\n");
     queue_print(p);
     queue_dequeue(p);
     queue_print(p);
-    
+
     p = queue_destroy(p);
     queue_print(p);
 
@@ -219,7 +219,7 @@ printf("-----------RED BLACK TREES--------------------\n");
 
     printf("Inserting item 17\n");
     red_black_tree_insert_key(&RB, 17);
-    
+
     printf("Item 12 was%sfound in tree\n", (red_black_tree_search(RB, 12) == NULLitem) ? " not " : " ");
     printf("Item 33 was%sfound in tree\n", (red_black_tree_search(RB, 33) == NULLitem) ? " not " : " ");
     printf("Now printing keys in ascending order using red_black_tree_print_elements: ");
@@ -344,8 +344,13 @@ printf("\n-----------HASH TABLE(linear probing)--------------------\n");
         printf("ERROR\n");
 
     hash_destroy(ht);
-    printf("Hash Table passed all tests!\n");
-    printf("\n-----------HASH TABLE(seperate chaining)--------------------\n");    
+    printf("Hash Table passed all tests!\n"); */
+ 
+    printf("\n-----------HASH TABLE(seperate chaining)--------------------\n");
+
+    
+
+
     return 0;
 }
 
