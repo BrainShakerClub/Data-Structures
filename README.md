@@ -60,4 +60,3 @@ The **purpose** of this repository is to:
 - [x] **Red-Black Trees**
 - [x] **Directed Graphs**
 - [x] **Undirected Graphs**
-- [ ] 
