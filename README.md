@@ -8,12 +8,26 @@
 
 
 
-## **Authors**
+ <p align="center">
+ <img src="assets/BrainShaker.jpg" alt="BrainShaker" width="169" />
+ <br>
+ <a href="https://github.com/BrainShakerClub/ADT-library/blob/main/assets/LICENSE">Copyright (c)
+    </a>
+    2022
+    <a href="https://github.com/BrainShakerClub">
+        <b>Brain Shaker Computer Club</b>
+        <br>
+    </a> 
+
+</p>
+
 > [**Antonis Kalantzis**](https://github.com/tonykalantzis)
 
 > [**Giorgos Sofronas**](https://github.com/giorgossofronas)
 
 > [**Mixalis Kostagiannis**](https://github.com/MikeRaphK)
+ 
+
 
 ## **Purpose**
 The **purpose** of this repository is to:
@@ -74,19 +88,3 @@ The **purpose** of this repository is to:
 
 - [x] [**Undirected Graphs**](source/UndirectedGraphs/UndirectedGraphs.c)
 
-<p align="center">
-    <br>
-    <br>
-    <img src="assets/BrainShaker.jpg" alt="BrainShaker" width="302" />
-    <br>
-    <br>
-    <a href="https://github.com/BrainShakerClub/ADT-library/blob/main/assets/LICENSE">Copyright (c)
-    </a>
-    2022
-    <a href="https://github.com/BrainShakerClub">
-        <b>Brain Shaker Computer Club</b>
-        <br>
-        <br>
-    </a>
-    
-</p>
