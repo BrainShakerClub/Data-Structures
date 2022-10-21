@@ -55,7 +55,7 @@ The **purpose** of this repository is to:
 - [x] **Queues**
 - [x] **Priority Queues**
 - [ ] **Hash with seperate chaining**
-- [ ] **Hash with linear probing**
+- [x] **Hash with linear probing**
 - [x] **Binary Trees**
 - [x] **Red-Black Trees**
 - [x] **Directed Graphs**

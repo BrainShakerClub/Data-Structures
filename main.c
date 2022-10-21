@@ -319,7 +319,7 @@ printf("-----------UNDIRECTED GRAPHS--------------------\n");
     undirected_graph_simple_path_check(UG, 2, 7);
     fclose(file1);
 
-printf("\n-----------HASH TABLE--------------------\n");
+printf("\n-----------HASH TABLE(linear probing)--------------------\n");
     HashTable ht = hash_initialize();
 
     // test insert
@@ -345,7 +345,7 @@ printf("\n-----------HASH TABLE--------------------\n");
 
     hash_destroy(ht);
     printf("Hash Table passed all tests!\n");
-    
+    printf("\n-----------HASH TABLE(seperate chaining)--------------------\n");    
     return 0;
 }
 
