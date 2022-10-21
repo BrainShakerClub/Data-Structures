@@ -11,7 +11,7 @@
  <p align="center">
  <img src="assets/BrainShaker.jpg" alt="BrainShaker" width="200" />
  <br>
- <a href="https://github.com/BrainShakerClub/ADT-library/blob/main/assets/LICENSE">Copyright (c)
+ <a href="LICENSE">Copyright (c)
     </a>
     2022
     <a href="https://github.com/BrainShakerClub">
