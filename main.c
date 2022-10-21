@@ -251,7 +251,7 @@ printf("-----------RED BLACK TREES--------------------\n");
 
 printf("-----------DIRECTED GRAPHS--------------------\n");
     FILE* file1;
-    file1 = fopen("./graph_examples/DirectedGraph.txt", "r");
+    file1 = fopen("./assets/graph_examples/DirectedGraph.txt", "r");
     if (file1 == NULL) {
         printf("File can't be opened. Exiting...\n");
         return 1;
@@ -288,7 +288,7 @@ printf("-----------DIRECTED GRAPHS--------------------\n");
 
 printf("-----------UNDIRECTED GRAPHS--------------------\n");
     FILE* file2;
-    file2 = fopen("./graph_examples/UndirectedGraph.txt", "r");
+    file2 = fopen("./assets/graph_examples/UndirectedGraph.txt", "r");
     if (file2 == NULL) {
         printf("File can't be opened. Exiting...\n");
         return 1;
