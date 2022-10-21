@@ -9,8 +9,7 @@
 
 
  <p align="center">
- <img src="assets/BrainShaker.jpg" alt="BrainShaker" width="169" />
- <br>
+ <img src="assets/BrainShaker.jpg" alt="BrainShaker" width="269"
  <a href="https://github.com/BrainShakerClub/ADT-library/blob/main/assets/LICENSE">Copyright (c)
     </a>
     2022
