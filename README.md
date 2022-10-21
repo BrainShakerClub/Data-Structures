@@ -30,9 +30,9 @@ The **purpose** of this repository is to:
 
  Provide a **library** writen in **C** with **all** the **popular** **data structures** that there are. We opted for a binary functionality:
 
-1. Easy to **use**. We wanted to provide **ready-to-use** **data structs** just **like** in **high-level languages**
+1. Easy to **use**. We wanted to provide **ready-to-use** **data structs** just **like** in **high-level languages**.
 
-2. Easy to **understand code**(style, variable names, types e.t.c). Providing solid algorithimic and theoretical foundations of the structures.Also food for thought on the technical part. Over all an opportunity of deepening c understanding.
+2. Easy to **understand code**(style, variable names, types e.t.c). Providing solid algorithimic and theoretical foundations of the implementation of the structures. Also food for thought on the technical part and over all an opportunity of deepening C understanding.
 
 
 ## **How to use**
