@@ -3,6 +3,8 @@
         "stdlib.h": "c",
         "binarytree.h": "c",
         "binarytrees.h": "c",
-        "stdbool.h": "c"
+        "stdbool.h": "c",
+        "stdio.h": "c",
+        "undirectedgraphs.h": "c"
     }
 }

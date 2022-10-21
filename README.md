@@ -48,15 +48,22 @@ The **purpose** of this repository is to:
 </dl>
 
 ## **The Data Structures:**
-- [x] **Arrays**
+- [x] [**Arrays**](source/Arrays/Arrays.c)
   
-- [x] **Lists**
-- [x] **Stacks**
-- [x] **Queues**
-- [x] **Priority Queues**
-- [ ] **Hash with seperate chaining**
-- [x] **Hash with linear probing**
-- [x] **Binary Trees**
-- [x] **Red-Black Trees**
-- [x] **Directed Graphs**
-- [x] **Undirected Graphs**
+- [x] [**Lists**](source/Lists/Lists.c)
+  
+- [x] [**Stacks**](source/Stacks/Stacks.c)
+  
+- [x] [**Queues**](source/Queues/Queues.c)
+
+- [x] [**Priority Queues**](source/PriorityQueues/PriorityQueues.c)
+  
+- [x] [**Hash Tables**](source/HashTables/HashTable.c)
+  
+- [x] [**Binary Trees**](source/BinaryTrees/BinaryTrees.c)
+  
+- [x] [**Red-Black Trees**](source/RedBlackTrees/RedBlackTrees.c)
+
+- [x] [**Directed Graphs**](source/DirectedGraphs/DirectedGraphs.c)
+
+- [x] [**Undirected Graphs**](source/UndirectedGraphs/UndirectedGraphs.c)
