@@ -6,17 +6,7 @@
     </p>
 </h1>
 
-<p align="center">
-    <a href="https://github.com/BrainShakerClub/ADT-library/blob/main/assets/LICENSE">Copyright (c)
-    </a>
-    2022
-        <a href="https://github.com/BrainShakerClub">
-            <b>Brain Shaker Computer Club</b>
-            <br>
-            <br>
-        </a>
-    <img src="assets/BrainShaker.jpg" alt="BrainShaker" width="302" />
-</p>
+
 
 ## **Authors**
 > [**Antonis Kalantzis**](https://github.com/tonykalantzis)
@@ -83,3 +73,20 @@ The **purpose** of this repository is to:
 - [x] [**Directed Graphs**](source/DirectedGraphs/DirectedGraphs.c)
 
 - [x] [**Undirected Graphs**](source/UndirectedGraphs/UndirectedGraphs.c)
+
+<p align="center">
+    <br>
+    <br>
+    <img src="assets/BrainShaker.jpg" alt="BrainShaker" width="302" />
+    <br>
+    <br>
+    <a href="https://github.com/BrainShakerClub/ADT-library/blob/main/assets/LICENSE">Copyright (c)
+    </a>
+    2022
+    <a href="https://github.com/BrainShakerClub">
+        <b>Brain Shaker Computer Club</b>
+        <br>
+        <br>
+    </a>
+    
+</p>
