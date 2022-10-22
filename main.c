@@ -13,6 +13,8 @@
 #include "UndirectedGraphs.h"
 #include "HashTable.h"
 
+// THIS IS AN EXAMPLE ON HOW TO USE AND COMPILE THE LIBRARY
+
 int main(void)
 {
 printf("-----------LISTS--------------------\n");
@@ -345,7 +347,7 @@ printf("\n-----------HASH TABLE(linear probing)--------------------\n");
 
     hash_destroy(ht);
     printf("Hash Table passed all tests!\n");
-    prio
+
     return 0;
 }
 

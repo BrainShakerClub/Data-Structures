@@ -27,7 +27,7 @@ OBJS = $(SRC)/Lists/Lists.o \
 lib: $(OBJS)
 	ar rcs $(LIB) $(OBJS)
 	@$(RM) $(OBJS)
-	
+
 # destroy library
 .PHONY: clean
 clean:
