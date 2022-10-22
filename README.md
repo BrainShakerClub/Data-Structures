@@ -42,7 +42,7 @@ The **purpose** of this repository is to:
 ## **How to use**
 ### - **The library**
 * ```bash 
-    ~Data-Structures/library$ make
+  ~Data-Structures/library$ make
   ```
 
 * There will be produced a file named BSdatastructs.a
