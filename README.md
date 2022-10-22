@@ -55,9 +55,9 @@ The **purpose** of this repository is to:
 
 ### - **Specific Function**
 * All functions have the format:
- ```c
- data_struct_function()
- ```
+* ```c
+  data_struct_function()
+  ```
 * All structures use **types** of **integers**
 
 * **Specific usage** can be found in the **documentation** of each structure
