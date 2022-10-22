@@ -9,7 +9,7 @@ CC = gcc
 CFLAGS = -Wall -Werror -Wextra -I$(INCLUDE)
 
 # library
-LIB = BSdatatypes.a
+LIB = BSdatastructs.a
 
 # object files
 OBJS = $(SRC)/Lists/Lists.o \
