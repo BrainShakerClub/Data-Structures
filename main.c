@@ -345,7 +345,7 @@ printf("\n-----------HASH TABLE(linear probing)--------------------\n");
 
     hash_destroy(ht);
     printf("Hash Table passed all tests!\n");
- 
+    prio
     return 0;
 }
 

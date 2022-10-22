@@ -20,11 +20,11 @@ static inline unsigned int linear_probing(void)
     return 1;
 }
 
-/* array with prime sizes proven to function 
-   properly as hash table sizes. Rehashing occurs based 
-   on these numbers. If 3221225479 isn't enough, we 
+/* array with prime sizes proven to function
+   properly as hash table sizes. Rehashing occurs based
+   on these numbers. If 3221225479 isn't enough, we
    double hash table's size */
-static unsigned int prime_sizes[] = 
+static unsigned int prime_sizes[] =
 {
     53, 97, 193, 389, 769, 1543, 3079, 6151, 12289, 24593, 49157, 98317, 196613, 393241,
     786433, 1572869, 3145739, 6291469, 12582917, 25165843, 50331653, 100663319, 201326611,
@@ -34,7 +34,7 @@ static unsigned int prime_sizes[] =
 #define START_CAPACITY prime_sizes[0]
 
 // hash node state
-typedef enum 
+typedef enum
 {
     EMPTY, OCCUPIED, DELETED
 } State;
@@ -102,12 +102,12 @@ static unsigned int find_index(HashTable ht, int value)
 {
     unsigned int hash_value = hash_int(value);
     for (unsigned int index = hash_value % ht->capacity, step = linear_probing(), adj = 0, count = 0, ind = index;
-         count != ht->capacity && ht->array[ind].state != EMPTY; 
+         count != ht->capacity && ht->array[ind].state != EMPTY;
          count++, adj += step, ind = (index + adj) % ht->capacity)
     {
         if (ht->array[ind].state == OCCUPIED && ht->array[ind].value == value)
             return ind;
-    }   
+    }
     return ht->capacity;
 }
 
@@ -145,7 +145,7 @@ void hash_insert(HashTable ht, int value)
         }
         else if (ht->array[new_pos].state == DELETED)
         {
-            /* found a deleted position 
+            /* found a deleted position
                we could insert here, but value might appear later in ht
                save index and continue searching */
             if (deleted_index == ht->capacity + 1)
@@ -174,7 +174,7 @@ bool hash_remove(HashTable ht, int value)
         return false;
 
     unsigned int index = find_index(ht, value);
-    
+
     if (index == ht->capacity)
         return false;
 

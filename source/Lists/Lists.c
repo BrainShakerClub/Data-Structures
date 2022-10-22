@@ -4,17 +4,19 @@
 #include "Lists.h"
 #include "Arrays.h"
 
-typedef struct ListNode {
+typedef struct ListNode
+{
     int data;
     struct ListNode* next;
 }ListNode;
 
-typedef struct List {
+typedef struct List
+{
     int count;
     ListNode* first;
 }List;
 
-ListLink list_initialize() 
+ListLink list_initialize()
 {
     ListLink pointer = malloc(sizeof(List));
     pointer->count = 0;
@@ -33,11 +35,11 @@ void list_enlist(ListLink pointer, int data) //create 1 at start
     {
         pointer->first = temp;
         pointer->count++;
-    } 
-    else 
+    }
+    else
     {
         temp->next = pointer->first;
-        pointer->first = temp; 
+        pointer->first = temp;
         pointer->count++;
     }
 }
@@ -95,7 +97,7 @@ void list_append(ListLink pointer, int data)//create 1 at end
 
 int list_delete(ListLink pointer)//delete 1 at start
 {
-    if(pointer == NULL) 
+    if(pointer == NULL)
     {
         printf("ERROR. The list is empty, cant delete a node\n");
         return -1;
@@ -105,7 +107,7 @@ int list_delete(ListLink pointer)//delete 1 at start
         int temp = pointer->first->data;
         free(pointer->first);
         pointer->first = NULL;
-        pointer->count--; 
+        pointer->count--;
         return temp;
     }
     else
@@ -113,8 +115,8 @@ int list_delete(ListLink pointer)//delete 1 at start
         ListNodeLink temp = pointer->first->next;
         int data = pointer->first->data;
         free(pointer->first);
-        pointer->first = temp; 
-        pointer->count--; 
+        pointer->first = temp;
+        pointer->count--;
         return data;
     }
 }
@@ -195,7 +197,5 @@ void list_sort(ListLink pointer)
     {
         list_enlist(pointer,array[i]);
     }
-    list_reverse(pointer); //reverse beacuse its in desceding order
+    list_reverse(pointer); //reverse because its in desceding order
 }
-
-

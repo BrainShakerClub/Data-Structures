@@ -12,4 +12,3 @@ void queue_reverse(QueueLink pointer);
 QueueLink queue_copy(QueueLink pointer);
 int* queue_to_array(QueueLink pointer);
 void queue_sort(QueueLink pointer);
-

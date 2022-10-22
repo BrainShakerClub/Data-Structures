@@ -3,10 +3,10 @@
 #include <stdlib.h>
 #include "Stacks.h"
 
-typedef struct StackNode 
-{          
+typedef struct StackNode
+{
     int data;
-    struct StackNode *below;    
+    struct StackNode *below;
 }StackNode;
 
 typedef struct Stack
@@ -19,10 +19,10 @@ StackLink stack_initialize()
 {
     StackLink pointer;
     pointer = malloc(sizeof(StackLink));
-    pointer->count = 0;   
-    pointer->top = NULL; 
+    pointer->count = 0;
+    pointer->top = NULL;
     return pointer;
-} 
+}
 
 void stack_push(StackLink pointer, int value)
 {
@@ -37,16 +37,16 @@ void stack_push(StackLink pointer, int value)
 
 int stack_pop(StackLink pointer)
 {
-    if(pointer->count != 0) 
+    if(pointer->count != 0)
     {
         StackNodeLink temp;
         temp = pointer->top;
-        int n = pointer->top->data; 
-        pointer->top = pointer->top->below;  
-        free(temp);                
-        pointer->count--;  
-        return n;  
-    } else 
+        int n = pointer->top->data;
+        pointer->top = pointer->top->below;
+        free(temp);
+        pointer->count--;
+        return n;
+    } else
     {
         printf("The Stack is empty.\n");
         return -1;
@@ -68,7 +68,7 @@ Array_Int stack_to_array(StackLink pointer)
 }
 
 StackLink stack_copy(StackLink pointer)
-{  
+{
     Array_Int array = stack_to_array(pointer);
     StackLink new = stack_initialize();
     for(int i = 0 ; i < pointer->count ; i++)
@@ -83,7 +83,7 @@ void stack_clear(StackLink pointer)
 {
     printf("Clearing the stack:\n");
     int i = pointer->count;
-    while(i > 0) 
+    while(i > 0)
     {
         printf("Poping -> ( %d )\n", stack_pop(pointer));
         i--;
@@ -95,7 +95,7 @@ void stack_print(StackLink pointer)
     printf("The stack is:\n");
     StackLink new = stack_copy(pointer);
     int i = pointer->count;
-    while(i > 0) 
+    while(i > 0)
     {
         printf("( %d )\n", stack_pop(new));
         i--;

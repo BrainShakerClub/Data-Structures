@@ -7,7 +7,6 @@ unsigned int hash_int(unsigned int);
 
 typedef struct hash_table* HashTable;
 
-
 HashTable hash_initialize(void);
 void hash_insert(HashTable, int);
 bool hash_remove(HashTable, int);

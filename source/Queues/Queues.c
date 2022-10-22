@@ -4,12 +4,14 @@
 #include "Queues.h"
 #include "Arrays.h"
 
-typedef struct QueueNode {
+typedef struct QueueNode 
+{
     int data;
     struct QueueNode* next;
 }QueueNode;
 
-typedef struct Queue {
+typedef struct Queue 
+{
     int count;
     QueueNode* first;
 }Queue;
