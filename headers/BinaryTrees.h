@@ -5,6 +5,7 @@ typedef struct BinaryTree* BinaryTreeLink;
 
 void item_show(int x);
 
+
 BinaryTreeLink binary_tree_make_tree(int item);
 int binary_tree_root(BinaryTreeLink root);
 int binary_tree_parent(BinaryTreeLink tree, BinaryTreeLink node);
