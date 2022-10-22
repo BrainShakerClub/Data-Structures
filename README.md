@@ -29,7 +29,6 @@
 > [**Mixalis Kostagiannis**](https://github.com/MikeRaphK)
  
 
-
 ## **Purpose**
 The **purpose** of this repository is to:
 
@@ -42,7 +41,17 @@ The **purpose** of this repository is to:
 
 ## **How to use**
 ### - **The library**
-"Insert giorgi's knowledge of how to compile a lib"
+* ```bash 
+    ~Data-Structures/library$ make
+  ```
+
+* There will be produced a file named BSdatastructs.a
+
+* #include any .h file you want to use and compile your main program with:
+
+* ```bash 
+  ~Data-Structures$ gcc -o foo foo.o -L. path/BSdatastructs.a -flags
+  ```
 
 ### - **Specific Function**
 * All functions have the format:
