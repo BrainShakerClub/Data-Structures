@@ -346,11 +346,6 @@ printf("\n-----------HASH TABLE(linear probing)--------------------\n");
     hash_destroy(ht);
     printf("Hash Table passed all tests!\n");
  
-    printf("\n-----------HASH TABLE(seperate chaining)--------------------\n");
-
-    
-
-
     return 0;
 }
 
